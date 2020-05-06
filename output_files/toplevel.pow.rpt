@@ -1,0 +1,462 @@
+Power Analyzer report for toplevel
+Tue May 05 20:19:11 2020
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Parallel Compilation
+  3. Power Analyzer Summary
+  4. Power Analyzer Settings
+  5. Operating Conditions Used
+  6. Thermal Power Dissipation by Block
+  7. Thermal Power Dissipation by Block Type
+  8. Thermal Power Dissipation by Hierarchy
+  9. Core Dynamic Thermal Power Dissipation by Clock Domain
+ 10. Current Drawn from Voltage Supplies Summary
+ 11. VCCIO Supply Current Drawn by I/O Bank
+ 12. VCCIO Supply Current Drawn by Voltage
+ 13. Confidence Metric Details
+ 14. Signal Activities
+ 15. Power Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.13        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   4.4%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Power Analyzer Summary                                                                    ;
++----------------------------------------+--------------------------------------------------+
+; Power Analyzer Status                  ; Successful - Tue May 05 20:19:10 2020            ;
+; Quartus Prime Version                  ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition      ;
+; Revision Name                          ; toplevel                                         ;
+; Top-level Entity Name                  ; toplevel                                         ;
+; Family                                 ; Cyclone IV E                                     ;
+; Device                                 ; EP4CE115F29C7                                    ;
+; Power Models                           ; Final                                            ;
+; Total Thermal Power Dissipation        ; 455.11 mW                                        ;
+; Core Dynamic Thermal Power Dissipation ; 279.54 mW                                        ;
+; Core Static Thermal Power Dissipation  ; 105.21 mW                                        ;
+; I/O Thermal Power Dissipation          ; 70.36 mW                                         ;
+; Power Estimation Confidence            ; Low: user provided insufficient toggle rate data ;
++----------------------------------------+--------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Power Analyzer Settings                                                                                                  ;
++------------------------------------------------------------------+---------------------------------------+---------------+
+; Option                                                           ; Setting                               ; Default Value ;
++------------------------------------------------------------------+---------------------------------------+---------------+
+; Use smart compilation                                            ; Off                                   ; Off           ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                                    ; On            ;
+; Enable compact report table                                      ; Off                                   ; Off           ;
+; Default Power Input I/O Toggle Rate                              ; 12.5%                                 ; 12.5%         ;
+; Preset Cooling Solution                                          ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ;               ;
+; Board thermal model                                              ; None (CONSERVATIVE)                   ;               ;
+; Default Power Toggle Rate                                        ; 12.5%                                 ; 12.5%         ;
+; Use vectorless estimation                                        ; On                                    ; On            ;
+; Use Input Files                                                  ; Off                                   ; Off           ;
+; Filter Glitches in VCD File Reader                               ; On                                    ; On            ;
+; Power Analyzer Report Signal Activity                            ; Off                                   ; Off           ;
+; Power Analyzer Report Power Dissipation                          ; Off                                   ; Off           ;
+; Device Power Characteristics                                     ; TYPICAL                               ; TYPICAL       ;
+; Automatically Compute Junction Temperature                       ; On                                    ; On            ;
+; Specified Junction Temperature                                   ; 25                                    ; 25            ;
+; Ambient Temperature                                              ; 25                                    ; 25            ;
+; Use Custom Cooling Solution                                      ; Off                                   ; Off           ;
+; Board Temperature                                                ; 25                                    ; 25            ;
++------------------------------------------------------------------+---------------------------------------+---------------+
+
+
++-------------------------------------------------------------------------+
+; Operating Conditions Used                                               ;
++---------------------------------------------+---------------------------+
+; Setting                                     ; Value                     ;
++---------------------------------------------+---------------------------+
+; Device power characteristics                ; Typical                   ;
+;                                             ;                           ;
+; Voltages                                    ;                           ;
+;     VCCINT                                  ; 1.20 V                    ;
+;     VCCA                                    ; 2.50 V                    ;
+;     VCCD                                    ; 1.20 V                    ;
+;     3.3-V LVTTL I/O Standard                ; 3.3 V                     ;
+;     2.5 V I/O Standard                      ; 2.5 V                     ;
+;                                             ;                           ;
+; Auto computed junction temperature          ; 28.0 degrees Celsius      ;
+;     Ambient temperature                     ; 25.0 degrees Celsius      ;
+;     Junction-to-Case thermal resistance     ; 3.90 degrees Celsius/Watt ;
+;     Case-to-Heat Sink thermal resistance    ; 0.10 degrees Celsius/Watt ;
+;     Heat Sink-to-Ambient thermal resistance ; 2.50 degrees Celsius/Watt ;
+;                                             ;                           ;
+; Board model used                            ; None                      ;
++---------------------------------------------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Thermal Power Dissipation by Block                                                                                                           ;
++------------+------------+---------------------+-----------------------------+--------------------------------+-------------------------------+
+; Block Name ; Block Type ; Total Thermal Power ; Block Thermal Dynamic Power ; Block Thermal Static Power (1) ; Routing Thermal Dynamic Power ;
++------------+------------+---------------------+-----------------------------+--------------------------------+-------------------------------+
+(1) The "Thermal Power Dissipation by Block" Table has been hidden. To show this table, please select the "Write power dissipation by block to report file" option under "PowerPlay Power Analyzer Settings".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Thermal Power Dissipation by Block Type                                                                                                                                                                                   ;
++----------------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
+; Block Type                 ; Total Thermal Power by Block Type ; Block Thermal Dynamic Power ; Block Thermal Static Power (1) ; Routing Thermal Dynamic Power ; Block Average Toggle Rate (millions of transitions / sec) ;
++----------------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
+; PLL                        ; 0.64 mW                           ; 0.64 mW                     ; --                             ; 0.00 mW                       ;    4.167                                                  ;
+; M9K                        ; 3.93 mW                           ; 1.57 mW                     ; --                             ; 2.36 mW                       ;    5.568                                                  ;
+; Embedded multiplier block  ; 1.77 mW                           ; 1.77 mW                     ; --                             ; 0.00 mW                       ;    1.791                                                  ;
+; Embedded multiplier output ; 0.32 mW                           ; 0.00 mW                     ; --                             ; 0.32 mW                       ;    5.110                                                  ;
+; Combinational cell         ; 191.83 mW                         ; 81.65 mW                    ; --                             ; 110.18 mW                     ;   15.209                                                  ;
+; Clock control block        ; 11.19 mW                          ; 0.00 mW                     ; --                             ; 11.19 mW                      ;   18.429                                                  ;
+; Register cell              ; 69.17 mW                          ; 28.69 mW                    ; --                             ; 40.48 mW                      ;    6.248                                                  ;
+; I/O register               ; 1.04 mW                           ; 0.78 mW                     ; --                             ; 0.26 mW                       ;    6.010                                                  ;
+; I/O                        ; 35.21 mW                          ; 13.39 mW                    ; 21.39 mW                       ; 0.43 mW                       ;   13.069                                                  ;
++----------------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
+(1) The "Block Thermal Static Power" for all block types except Pins and the Voltage Regulator, if one exists, is part of the "Core Static Thermal Power Dissipation" value found on the PowerPlay Power Analyzer-->Summary report panel. The "Core Static Thermal Power Dissipation" also contains the thermal static power dissipated by the routing.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Thermal Power Dissipation by Hierarchy                                                                                                                                                                                                                                                                                                                                     ;
++----------------------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Compilation Hierarchy Node                               ; Total Thermal Power by Hierarchy (1) ; Block Thermal Dynamic Power (1) ; Block Thermal Static Power (1)(2) ; Routing Thermal Dynamic Power (1) ; Full Hierarchy Name                                                                                                                                            ;
++----------------------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; |toplevel                                                ; 315.10 mW (44.07 mW)                 ; 128.49 mW (13.40 mW)            ; 21.39 mW (21.39 mW)               ; 165.23 mW (9.28 mW)               ; |toplevel                                                                                                                                                      ;
+;     |adc:ADC                                             ; 0.02 mW (0.02 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |toplevel|adc:ADC                                                                                                                                              ;
+;     |dac:DAC                                             ; 70.09 mW (0.26 mW)                   ; 25.22 mW (0.24 mW)              ; --                                ; 44.87 mW (0.02 mW)                ; |toplevel|dac:DAC                                                                                                                                              ;
+;         |sample_scale:vol_scale_left                     ; 34.82 mW (0.00 mW)                   ; 12.37 mW (0.00 mW)              ; --                                ; 22.45 mW (0.00 mW)                ; |toplevel|dac:DAC|sample_scale:vol_scale_left                                                                                                                  ;
+;             |lpm_divide:Div0                             ; 34.67 mW (0.00 mW)                   ; 12.25 mW (0.00 mW)              ; --                                ; 22.42 mW (0.00 mW)                ; |toplevel|dac:DAC|sample_scale:vol_scale_left|lpm_divide:Div0                                                                                                  ;
+;                 |lpm_divide_b2p:auto_generated           ; 34.67 mW (0.00 mW)                   ; 12.25 mW (0.00 mW)              ; --                                ; 22.42 mW (0.00 mW)                ; |toplevel|dac:DAC|sample_scale:vol_scale_left|lpm_divide:Div0|lpm_divide_b2p:auto_generated                                                                    ;
+;                     |abs_divider_6dg:divider             ; 34.67 mW (0.35 mW)                   ; 12.25 mW (0.13 mW)              ; --                                ; 22.42 mW (0.22 mW)                ; |toplevel|dac:DAC|sample_scale:vol_scale_left|lpm_divide:Div0|lpm_divide_b2p:auto_generated|abs_divider_6dg:divider                                            ;
+;                         |alt_u_div_aaf:divider           ; 34.28 mW (34.28 mW)                  ; 12.10 mW (12.10 mW)             ; --                                ; 22.18 mW (22.18 mW)               ; |toplevel|dac:DAC|sample_scale:vol_scale_left|lpm_divide:Div0|lpm_divide_b2p:auto_generated|abs_divider_6dg:divider|alt_u_div_aaf:divider                      ;
+;                         |lpm_abs_j0a:my_abs_num          ; 0.04 mW (0.04 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |toplevel|dac:DAC|sample_scale:vol_scale_left|lpm_divide:Div0|lpm_divide_b2p:auto_generated|abs_divider_6dg:divider|lpm_abs_j0a:my_abs_num                     ;
+;             |lpm_mult:Mult0                              ; 0.15 mW (0.00 mW)                    ; 0.12 mW (0.00 mW)               ; --                                ; 0.03 mW (0.00 mW)                 ; |toplevel|dac:DAC|sample_scale:vol_scale_left|lpm_mult:Mult0                                                                                                   ;
+;                 |mult_l4t:auto_generated                 ; 0.15 mW (0.15 mW)                    ; 0.12 mW (0.12 mW)               ; --                                ; 0.03 mW (0.03 mW)                 ; |toplevel|dac:DAC|sample_scale:vol_scale_left|lpm_mult:Mult0|mult_l4t:auto_generated                                                                           ;
+;         |sample_scale:vol_scale_right                    ; 35.01 mW (0.00 mW)                   ; 12.61 mW (0.00 mW)              ; --                                ; 22.40 mW (0.00 mW)                ; |toplevel|dac:DAC|sample_scale:vol_scale_right                                                                                                                 ;
+;             |lpm_divide:Div0                             ; 34.87 mW (0.00 mW)                   ; 12.49 mW (0.00 mW)              ; --                                ; 22.37 mW (0.00 mW)                ; |toplevel|dac:DAC|sample_scale:vol_scale_right|lpm_divide:Div0                                                                                                 ;
+;                 |lpm_divide_b2p:auto_generated           ; 34.87 mW (0.00 mW)                   ; 12.49 mW (0.00 mW)              ; --                                ; 22.37 mW (0.00 mW)                ; |toplevel|dac:DAC|sample_scale:vol_scale_right|lpm_divide:Div0|lpm_divide_b2p:auto_generated                                                                   ;
+;                     |abs_divider_6dg:divider             ; 34.87 mW (0.38 mW)                   ; 12.49 mW (0.15 mW)              ; --                                ; 22.37 mW (0.23 mW)                ; |toplevel|dac:DAC|sample_scale:vol_scale_right|lpm_divide:Div0|lpm_divide_b2p:auto_generated|abs_divider_6dg:divider                                           ;
+;                         |alt_u_div_aaf:divider           ; 34.46 mW (34.46 mW)                  ; 12.33 mW (12.33 mW)             ; --                                ; 22.13 mW (22.13 mW)               ; |toplevel|dac:DAC|sample_scale:vol_scale_right|lpm_divide:Div0|lpm_divide_b2p:auto_generated|abs_divider_6dg:divider|alt_u_div_aaf:divider                     ;
+;                         |lpm_abs_j0a:my_abs_num          ; 0.03 mW (0.03 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |toplevel|dac:DAC|sample_scale:vol_scale_right|lpm_divide:Div0|lpm_divide_b2p:auto_generated|abs_divider_6dg:divider|lpm_abs_j0a:my_abs_num                    ;
+;             |lpm_mult:Mult0                              ; 0.15 mW (0.00 mW)                    ; 0.11 mW (0.00 mW)               ; --                                ; 0.03 mW (0.00 mW)                 ; |toplevel|dac:DAC|sample_scale:vol_scale_right|lpm_mult:Mult0                                                                                                  ;
+;                 |mult_l4t:auto_generated                 ; 0.15 mW (0.15 mW)                    ; 0.11 mW (0.11 mW)               ; --                                ; 0.03 mW (0.03 mW)                 ; |toplevel|dac:DAC|sample_scale:vol_scale_right|lpm_mult:Mult0|mult_l4t:auto_generated                                                                          ;
+;     |audio_interface:aud_driver                          ; 3.20 mW (3.20 mW)                    ; 0.62 mW (0.62 mW)               ; --                                ; 2.58 mW (2.58 mW)                 ; |toplevel|audio_interface:aud_driver                                                                                                                           ;
+;     |hard_block:auto_generated_inst                      ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|hard_block:auto_generated_inst                                                                                                                       ;
+;     |ui_control:control                                  ; 52.66 mW (2.64 mW)                   ; 20.53 mW (0.93 mW)              ; --                                ; 32.13 mW (1.72 mW)                ; |toplevel|ui_control:control                                                                                                                                   ;
+;         |lpm_divide:Div0                                 ; 50.01 mW (0.00 mW)                   ; 19.60 mW (0.00 mW)              ; --                                ; 30.41 mW (0.00 mW)                ; |toplevel|ui_control:control|lpm_divide:Div0                                                                                                                   ;
+;             |lpm_divide_hkm:auto_generated               ; 50.01 mW (0.00 mW)                   ; 19.60 mW (0.00 mW)              ; --                                ; 30.41 mW (0.00 mW)                ; |toplevel|ui_control:control|lpm_divide:Div0|lpm_divide_hkm:auto_generated                                                                                     ;
+;                 |sign_div_unsign_9nh:divider             ; 50.01 mW (0.00 mW)                   ; 19.60 mW (0.00 mW)              ; --                                ; 30.41 mW (0.00 mW)                ; |toplevel|ui_control:control|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider                                                         ;
+;                     |alt_u_div_6af:divider               ; 50.01 mW (50.01 mW)                  ; 19.60 mW (19.60 mW)             ; --                                ; 30.41 mW (30.41 mW)               ; |toplevel|ui_control:control|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider                                   ;
+;     |filters:filt                                        ; 140.24 mW (19.56 mW)                 ; 66.27 mW (12.01 mW)             ; --                                ; 73.98 mW (7.55 mW)                ; |toplevel|filters:filt                                                                                                                                         ;
+;         |FFT256:Forward                                  ; 28.01 mW (0.00 mW)                   ; 13.49 mW (0.00 mW)              ; --                                ; 14.53 mW (0.00 mW)                ; |toplevel|filters:filt|FFT256:Forward                                                                                                                          ;
+;             |IFFT256:BOOP2                               ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|IFFT256:BOOP2                                                                                                            ;
+;                 |BUFRAM256C:U_BUF1                       ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|IFFT256:BOOP2|BUFRAM256C:U_BUF1                                                                                          ;
+;                 |BUFRAM256C:U_BUF2                       ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|IFFT256:BOOP2|BUFRAM256C:U_BUF2                                                                                          ;
+;                 |IFFT16:U_FFT1                           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|IFFT256:BOOP2|IFFT16:U_FFT1                                                                                              ;
+;                 |IFFT16:U_FFT2                           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|IFFT256:BOOP2|IFFT16:U_FFT2                                                                                              ;
+;                 |IROTATOR64:U_MPU                        ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|IFFT256:BOOP2|IROTATOR64:U_MPU                                                                                           ;
+;                 |BUFRAM256C:Ubuf3                        ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|IFFT256:BOOP2|BUFRAM256C:Ubuf3                                                                                           ;
+;             |BUFRAM256C:U_BUF1                           ; 0.12 mW (0.10 mW)                    ; 0.05 mW (0.04 mW)               ; --                                ; 0.07 mW (0.05 mW)                 ; |toplevel|filters:filt|FFT256:Forward|BUFRAM256C:U_BUF1                                                                                                        ;
+;                 |RAM2x256C:URAM                          ; 0.02 mW (0.02 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |toplevel|filters:filt|FFT256:Forward|BUFRAM256C:U_BUF1|RAM2x256C:URAM                                                                                         ;
+;                     |altsyncram:ram_rtl_0                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|BUFRAM256C:U_BUF1|RAM2x256C:URAM|altsyncram:ram_rtl_0                                                                    ;
+;                         |altsyncram_00h1:auto_generated  ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|BUFRAM256C:U_BUF1|RAM2x256C:URAM|altsyncram:ram_rtl_0|altsyncram_00h1:auto_generated                                     ;
+;             |BUFRAM256C:U_BUF2                           ; 0.14 mW (0.10 mW)                    ; 0.05 mW (0.04 mW)               ; --                                ; 0.09 mW (0.06 mW)                 ; |toplevel|filters:filt|FFT256:Forward|BUFRAM256C:U_BUF2                                                                                                        ;
+;                 |RAM2x256C:URAM                          ; 0.04 mW (0.04 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.03 mW (0.03 mW)                 ; |toplevel|filters:filt|FFT256:Forward|BUFRAM256C:U_BUF2|RAM2x256C:URAM                                                                                         ;
+;                     |altsyncram:ram_rtl_0                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|BUFRAM256C:U_BUF2|RAM2x256C:URAM|altsyncram:ram_rtl_0                                                                    ;
+;                         |altsyncram_40h1:auto_generated  ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|BUFRAM256C:U_BUF2|RAM2x256C:URAM|altsyncram:ram_rtl_0|altsyncram_40h1:auto_generated                                     ;
+;             |FFT16:U_FFT1                                ; 11.62 mW (8.93 mW)                   ; 5.64 mW (4.28 mW)               ; --                                ; 5.98 mW (4.65 mW)                 ; |toplevel|filters:filt|FFT256:Forward|FFT16:U_FFT1                                                                                                             ;
+;                 |MPUC924_383:UM383                       ; 0.75 mW (0.75 mW)                    ; 0.39 mW (0.39 mW)               ; --                                ; 0.36 mW (0.36 mW)                 ; |toplevel|filters:filt|FFT256:Forward|FFT16:U_FFT1|MPUC924_383:UM383                                                                                           ;
+;                 |MPUC541:UM541                           ; 0.57 mW (0.57 mW)                    ; 0.30 mW (0.30 mW)               ; --                                ; 0.27 mW (0.27 mW)                 ; |toplevel|filters:filt|FFT256:Forward|FFT16:U_FFT1|MPUC541:UM541                                                                                               ;
+;                 |MPUC707:UM707                           ; 0.77 mW (0.77 mW)                    ; 0.34 mW (0.34 mW)               ; --                                ; 0.43 mW (0.43 mW)                 ; |toplevel|filters:filt|FFT256:Forward|FFT16:U_FFT1|MPUC707:UM707                                                                                               ;
+;                 |MPUC1307:UM1307                         ; 0.60 mW (0.60 mW)                    ; 0.34 mW (0.34 mW)               ; --                                ; 0.26 mW (0.26 mW)                 ; |toplevel|filters:filt|FFT256:Forward|FFT16:U_FFT1|MPUC1307:UM1307                                                                                             ;
+;             |FFT16:U_FFT2                                ; 14.15 mW (11.52 mW)                  ; 6.80 mW (5.44 mW)               ; --                                ; 7.35 mW (6.09 mW)                 ; |toplevel|filters:filt|FFT256:Forward|FFT16:U_FFT2                                                                                                             ;
+;                 |MPUC924_383:UM383                       ; 0.72 mW (0.72 mW)                    ; 0.39 mW (0.39 mW)               ; --                                ; 0.33 mW (0.33 mW)                 ; |toplevel|filters:filt|FFT256:Forward|FFT16:U_FFT2|MPUC924_383:UM383                                                                                           ;
+;                 |MPUC541:UM541                           ; 0.58 mW (0.58 mW)                    ; 0.30 mW (0.30 mW)               ; --                                ; 0.28 mW (0.28 mW)                 ; |toplevel|filters:filt|FFT256:Forward|FFT16:U_FFT2|MPUC541:UM541                                                                                               ;
+;                 |MPUC707:UM707                           ; 0.76 mW (0.76 mW)                    ; 0.34 mW (0.34 mW)               ; --                                ; 0.42 mW (0.42 mW)                 ; |toplevel|filters:filt|FFT256:Forward|FFT16:U_FFT2|MPUC707:UM707                                                                                               ;
+;                 |MPUC1307:UM1307                         ; 0.57 mW (0.57 mW)                    ; 0.33 mW (0.33 mW)               ; --                                ; 0.24 mW (0.24 mW)                 ; |toplevel|filters:filt|FFT256:Forward|FFT16:U_FFT2|MPUC1307:UM1307                                                                                             ;
+;             |ROTATOR64:U_MPU                             ; 0.94 mW (0.84 mW)                    ; 0.68 mW (0.64 mW)               ; --                                ; 0.26 mW (0.20 mW)                 ; |toplevel|filters:filt|FFT256:Forward|ROTATOR64:U_MPU                                                                                                          ;
+;                 |lpm_mult:Mult0                          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|ROTATOR64:U_MPU|lpm_mult:Mult0                                                                                           ;
+;                     |mult_86t:auto_generated             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|ROTATOR64:U_MPU|lpm_mult:Mult0|mult_86t:auto_generated                                                                   ;
+;                 |lpm_mult:Mult1                          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|ROTATOR64:U_MPU|lpm_mult:Mult1                                                                                           ;
+;                     |mult_86t:auto_generated             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|ROTATOR64:U_MPU|lpm_mult:Mult1|mult_86t:auto_generated                                                                   ;
+;                 |lpm_mult:Mult2                          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|ROTATOR64:U_MPU|lpm_mult:Mult2                                                                                           ;
+;                     |mult_86t:auto_generated             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|ROTATOR64:U_MPU|lpm_mult:Mult2|mult_86t:auto_generated                                                                   ;
+;                 |lpm_mult:Mult3                          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|ROTATOR64:U_MPU|lpm_mult:Mult3                                                                                           ;
+;                     |mult_86t:auto_generated             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|ROTATOR64:U_MPU|lpm_mult:Mult3|mult_86t:auto_generated                                                                   ;
+;                 |WROM256:UROM                            ; 0.10 mW (0.00 mW)                    ; 0.04 mW (0.00 mW)               ; --                                ; 0.06 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|ROTATOR64:U_MPU|WROM256:UROM                                                                                             ;
+;                     |altsyncram:Mux31_rtl_0              ; 0.10 mW (0.00 mW)                    ; 0.04 mW (0.00 mW)               ; --                                ; 0.06 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|ROTATOR64:U_MPU|WROM256:UROM|altsyncram:Mux31_rtl_0                                                                      ;
+;                         |altsyncram_0601:auto_generated  ; 0.10 mW (0.10 mW)                    ; 0.04 mW (0.04 mW)               ; --                                ; 0.06 mW (0.06 mW)                 ; |toplevel|filters:filt|FFT256:Forward|ROTATOR64:U_MPU|WROM256:UROM|altsyncram:Mux31_rtl_0|altsyncram_0601:auto_generated                                       ;
+;             |CNORM:U_NORM1                               ; 0.21 mW (0.21 mW)                    ; 0.04 mW (0.04 mW)               ; --                                ; 0.17 mW (0.17 mW)                 ; |toplevel|filters:filt|FFT256:Forward|CNORM:U_NORM1                                                                                                            ;
+;             |CNORM:U_NORM2                               ; 0.49 mW (0.49 mW)                    ; 0.04 mW (0.04 mW)               ; --                                ; 0.45 mW (0.45 mW)                 ; |toplevel|filters:filt|FFT256:Forward|CNORM:U_NORM2                                                                                                            ;
+;             |BUFRAM256C:Ubuf3                            ; 0.34 mW (0.10 mW)                    ; 0.18 mW (0.04 mW)               ; --                                ; 0.16 mW (0.06 mW)                 ; |toplevel|filters:filt|FFT256:Forward|BUFRAM256C:Ubuf3                                                                                                         ;
+;                 |RAM2x256C:URAM                          ; 0.25 mW (0.04 mW)                    ; 0.14 mW (0.01 mW)               ; --                                ; 0.10 mW (0.03 mW)                 ; |toplevel|filters:filt|FFT256:Forward|BUFRAM256C:Ubuf3|RAM2x256C:URAM                                                                                          ;
+;                     |altsyncram:ram_rtl_0                ; 0.21 mW (0.00 mW)                    ; 0.13 mW (0.00 mW)               ; --                                ; 0.08 mW (0.00 mW)                 ; |toplevel|filters:filt|FFT256:Forward|BUFRAM256C:Ubuf3|RAM2x256C:URAM|altsyncram:ram_rtl_0                                                                     ;
+;                         |altsyncram_svg1:auto_generated  ; 0.21 mW (0.21 mW)                    ; 0.13 mW (0.13 mW)               ; --                                ; 0.08 mW (0.08 mW)                 ; |toplevel|filters:filt|FFT256:Forward|BUFRAM256C:Ubuf3|RAM2x256C:URAM|altsyncram:ram_rtl_0|altsyncram_svg1:auto_generated                                      ;
+;         |IFFT256:Inverse                                 ; 27.11 mW (0.02 mW)                   ; 13.20 mW (0.01 mW)              ; --                                ; 13.91 mW (0.00 mW)                ; |toplevel|filters:filt|IFFT256:Inverse                                                                                                                         ;
+;             |BUFRAM256C:U_BUF1                           ; 0.18 mW (0.14 mW)                    ; 0.05 mW (0.04 mW)               ; --                                ; 0.13 mW (0.10 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|BUFRAM256C:U_BUF1                                                                                                       ;
+;                 |RAM2x256C:URAM                          ; 0.04 mW (0.04 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.03 mW (0.03 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|BUFRAM256C:U_BUF1|RAM2x256C:URAM                                                                                        ;
+;                     |altsyncram:ram_rtl_0                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|BUFRAM256C:U_BUF1|RAM2x256C:URAM|altsyncram:ram_rtl_0                                                                   ;
+;                         |altsyncram_svg1:auto_generated  ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|BUFRAM256C:U_BUF1|RAM2x256C:URAM|altsyncram:ram_rtl_0|altsyncram_svg1:auto_generated                                    ;
+;             |BUFRAM256C:U_BUF2                           ; 0.14 mW (0.09 mW)                    ; 0.05 mW (0.04 mW)               ; --                                ; 0.08 mW (0.05 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|BUFRAM256C:U_BUF2                                                                                                       ;
+;                 |RAM2x256C:URAM                          ; 0.04 mW (0.04 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.03 mW (0.03 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|BUFRAM256C:U_BUF2|RAM2x256C:URAM                                                                                        ;
+;                     |altsyncram:ram_rtl_0                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|BUFRAM256C:U_BUF2|RAM2x256C:URAM|altsyncram:ram_rtl_0                                                                   ;
+;                         |altsyncram_40h1:auto_generated  ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|BUFRAM256C:U_BUF2|RAM2x256C:URAM|altsyncram:ram_rtl_0|altsyncram_40h1:auto_generated                                    ;
+;             |IFFT16:U_FFT1                               ; 12.94 mW (10.38 mW)                  ; 6.35 mW (5.03 mW)               ; --                                ; 6.59 mW (5.35 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT1                                                                                                           ;
+;                 |MPUC924_383:UM383                       ; 0.74 mW (0.74 mW)                    ; 0.38 mW (0.38 mW)               ; --                                ; 0.36 mW (0.36 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT1|MPUC924_383:UM383                                                                                         ;
+;                 |MPUC541:UM541                           ; 0.56 mW (0.56 mW)                    ; 0.29 mW (0.29 mW)               ; --                                ; 0.27 mW (0.27 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT1|MPUC541:UM541                                                                                             ;
+;                 |MPUC707:UM707                           ; 0.67 mW (0.67 mW)                    ; 0.33 mW (0.33 mW)               ; --                                ; 0.34 mW (0.34 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT1|MPUC707:UM707                                                                                             ;
+;                 |MPUC1307:UM1307                         ; 0.57 mW (0.57 mW)                    ; 0.31 mW (0.31 mW)               ; --                                ; 0.26 mW (0.26 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT1|MPUC1307:UM1307                                                                                           ;
+;             |IFFT16:U_FFT2                               ; 12.43 mW (7.89 mW)                   ; 5.88 mW (3.80 mW)               ; --                                ; 6.55 mW (4.09 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2                                                                                                           ;
+;                 |MPUC924_383:UM383                       ; 0.61 mW (0.61 mW)                    ; 0.35 mW (0.35 mW)               ; --                                ; 0.26 mW (0.26 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|MPUC924_383:UM383                                                                                         ;
+;                 |MPUC541:UM541                           ; 0.45 mW (0.45 mW)                    ; 0.26 mW (0.26 mW)               ; --                                ; 0.19 mW (0.19 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|MPUC541:UM541                                                                                             ;
+;                 |MPUC707:UM707                           ; 1.07 mW (0.58 mW)                    ; 0.39 mW (0.30 mW)               ; --                                ; 0.68 mW (0.28 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|MPUC707:UM707                                                                                             ;
+;                     |altshift_taps:mpyjd_rtl_0           ; 0.49 mW (0.00 mW)                    ; 0.09 mW (0.00 mW)               ; --                                ; 0.40 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|MPUC707:UM707|altshift_taps:mpyjd_rtl_0                                                                   ;
+;                         |shift_taps_a6m:auto_generated   ; 0.49 mW (0.01 mW)                    ; 0.09 mW (0.00 mW)               ; --                                ; 0.40 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|MPUC707:UM707|altshift_taps:mpyjd_rtl_0|shift_taps_a6m:auto_generated                                     ;
+;                             |altsyncram_vk31:altsyncram4 ; 0.47 mW (0.47 mW)                    ; 0.08 mW (0.08 mW)               ; --                                ; 0.39 mW (0.39 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|MPUC707:UM707|altshift_taps:mpyjd_rtl_0|shift_taps_a6m:auto_generated|altsyncram_vk31:altsyncram4         ;
+;                             |cntr_6pf:cntr1              ; 0.01 mW (0.01 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|MPUC707:UM707|altshift_taps:mpyjd_rtl_0|shift_taps_a6m:auto_generated|cntr_6pf:cntr1                      ;
+;                 |MPUC1307:UM1307                         ; 0.52 mW (0.52 mW)                    ; 0.29 mW (0.29 mW)               ; --                                ; 0.23 mW (0.23 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|MPUC1307:UM1307                                                                                           ;
+;                 |altshift_taps:d1r_rtl_0                 ; 0.94 mW (0.00 mW)                    ; 0.34 mW (0.00 mW)               ; --                                ; 0.59 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|altshift_taps:d1r_rtl_0                                                                                   ;
+;                     |shift_taps_t7m:auto_generated       ; 0.94 mW (0.00 mW)                    ; 0.34 mW (0.00 mW)               ; --                                ; 0.59 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|altshift_taps:d1r_rtl_0|shift_taps_t7m:auto_generated                                                     ;
+;                         |altsyncram_3h81:altsyncram2     ; 0.83 mW (0.83 mW)                    ; 0.33 mW (0.33 mW)               ; --                                ; 0.49 mW (0.49 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|altshift_taps:d1r_rtl_0|shift_taps_t7m:auto_generated|altsyncram_3h81:altsyncram2                         ;
+;                         |cntr_apf:cntr1                  ; 0.11 mW (0.11 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.10 mW (0.10 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|altshift_taps:d1r_rtl_0|shift_taps_t7m:auto_generated|cntr_apf:cntr1                                      ;
+;                 |altshift_taps:s4d1i_rtl_0               ; 0.14 mW (0.00 mW)                    ; 0.09 mW (0.00 mW)               ; --                                ; 0.04 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|altshift_taps:s4d1i_rtl_0                                                                                 ;
+;                     |shift_taps_c6m:auto_generated       ; 0.14 mW (0.00 mW)                    ; 0.09 mW (0.00 mW)               ; --                                ; 0.04 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|altshift_taps:s4d1i_rtl_0|shift_taps_c6m:auto_generated                                                   ;
+;                         |altsyncram_0e81:altsyncram2     ; 0.12 mW (0.12 mW)                    ; 0.08 mW (0.08 mW)               ; --                                ; 0.04 mW (0.04 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|altshift_taps:s4d1i_rtl_0|shift_taps_c6m:auto_generated|altsyncram_0e81:altsyncram2                       ;
+;                         |cntr_9pf:cntr1                  ; 0.02 mW (0.02 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|altshift_taps:s4d1i_rtl_0|shift_taps_c6m:auto_generated|cntr_9pf:cntr1                                    ;
+;                 |altshift_taps:s4d1r_rtl_0               ; 0.81 mW (0.00 mW)                    ; 0.34 mW (0.00 mW)               ; --                                ; 0.47 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|altshift_taps:s4d1r_rtl_0                                                                                 ;
+;                     |shift_taps_s7m:auto_generated       ; 0.81 mW (0.00 mW)                    ; 0.34 mW (0.00 mW)               ; --                                ; 0.47 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|altshift_taps:s4d1r_rtl_0|shift_taps_s7m:auto_generated                                                   ;
+;                         |altsyncram_ug81:altsyncram2     ; 0.78 mW (0.78 mW)                    ; 0.33 mW (0.33 mW)               ; --                                ; 0.44 mW (0.44 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|altshift_taps:s4d1r_rtl_0|shift_taps_s7m:auto_generated|altsyncram_ug81:altsyncram2                       ;
+;                         |cntr_6pf:cntr1                  ; 0.04 mW (0.04 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.03 mW (0.03 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IFFT16:U_FFT2|altshift_taps:s4d1r_rtl_0|shift_taps_s7m:auto_generated|cntr_6pf:cntr1                                    ;
+;             |IROTATOR64:U_MPU                            ; 0.99 mW (0.88 mW)                    ; 0.68 mW (0.64 mW)               ; --                                ; 0.31 mW (0.24 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IROTATOR64:U_MPU                                                                                                        ;
+;                 |lpm_mult:Mult0                          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IROTATOR64:U_MPU|lpm_mult:Mult0                                                                                         ;
+;                     |mult_86t:auto_generated             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IROTATOR64:U_MPU|lpm_mult:Mult0|mult_86t:auto_generated                                                                 ;
+;                 |lpm_mult:Mult1                          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IROTATOR64:U_MPU|lpm_mult:Mult1                                                                                         ;
+;                     |mult_86t:auto_generated             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IROTATOR64:U_MPU|lpm_mult:Mult1|mult_86t:auto_generated                                                                 ;
+;                 |lpm_mult:Mult2                          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IROTATOR64:U_MPU|lpm_mult:Mult2                                                                                         ;
+;                     |mult_86t:auto_generated             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IROTATOR64:U_MPU|lpm_mult:Mult2|mult_86t:auto_generated                                                                 ;
+;                 |lpm_mult:Mult3                          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IROTATOR64:U_MPU|lpm_mult:Mult3                                                                                         ;
+;                     |mult_86t:auto_generated             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IROTATOR64:U_MPU|lpm_mult:Mult3|mult_86t:auto_generated                                                                 ;
+;                 |IWROM256:UROM                           ; 0.12 mW (0.00 mW)                    ; 0.04 mW (0.00 mW)               ; --                                ; 0.08 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IROTATOR64:U_MPU|IWROM256:UROM                                                                                          ;
+;                     |altsyncram:Mux31_rtl_0              ; 0.12 mW (0.00 mW)                    ; 0.04 mW (0.00 mW)               ; --                                ; 0.08 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IROTATOR64:U_MPU|IWROM256:UROM|altsyncram:Mux31_rtl_0                                                                   ;
+;                         |altsyncram_1601:auto_generated  ; 0.12 mW (0.12 mW)                    ; 0.04 mW (0.04 mW)               ; --                                ; 0.08 mW (0.08 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|IROTATOR64:U_MPU|IWROM256:UROM|altsyncram:Mux31_rtl_0|altsyncram_1601:auto_generated                                    ;
+;             |CNORM:U_NORM1                               ; 0.16 mW (0.16 mW)                    ; 0.04 mW (0.04 mW)               ; --                                ; 0.12 mW (0.12 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|CNORM:U_NORM1                                                                                                           ;
+;             |CNORM:U_NORM2                               ; 0.06 mW (0.06 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.04 mW (0.04 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|CNORM:U_NORM2                                                                                                           ;
+;             |BUFRAM256C:Ubuf3                            ; 0.20 mW (0.09 mW)                    ; 0.12 mW (0.04 mW)               ; --                                ; 0.08 mW (0.05 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|BUFRAM256C:Ubuf3                                                                                                        ;
+;                 |RAM2x256C:URAM                          ; 0.11 mW (0.03 mW)                    ; 0.08 mW (0.01 mW)               ; --                                ; 0.04 mW (0.01 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|BUFRAM256C:Ubuf3|RAM2x256C:URAM                                                                                         ;
+;                     |altsyncram:ram_rtl_0                ; 0.09 mW (0.00 mW)                    ; 0.06 mW (0.00 mW)               ; --                                ; 0.02 mW (0.00 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|BUFRAM256C:Ubuf3|RAM2x256C:URAM|altsyncram:ram_rtl_0                                                                    ;
+;                         |altsyncram_00h1:auto_generated  ; 0.09 mW (0.09 mW)                    ; 0.06 mW (0.06 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |toplevel|filters:filt|IFFT256:Inverse|BUFRAM256C:Ubuf3|RAM2x256C:URAM|altsyncram:ram_rtl_0|altsyncram_00h1:auto_generated                                     ;
+;         |inversion_filter:inversion                      ; 0.11 mW (0.11 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.09 mW (0.09 mW)                 ; |toplevel|filters:filt|inversion_filter:inversion                                                                                                              ;
+;         |low_pass_filter:lpf                             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|filters:filt|low_pass_filter:lpf                                                                                                                     ;
+;         |pitch_filter:pitch                              ; 37.01 mW (37.01 mW)                  ; 16.98 mW (16.98 mW)             ; --                                ; 20.03 mW (20.03 mW)               ; |toplevel|filters:filt|pitch_filter:pitch                                                                                                                      ;
+;         |reverb_filter:reverb                            ; 28.43 mW (0.24 mW)                   ; 10.57 mW (0.12 mW)              ; --                                ; 17.87 mW (0.12 mW)                ; |toplevel|filters:filt|reverb_filter:reverb                                                                                                                    ;
+;             |lpm_divide:Div0                             ; 27.66 mW (0.00 mW)                   ; 9.96 mW (0.00 mW)               ; --                                ; 17.70 mW (0.00 mW)                ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0                                                                                                    ;
+;                 |lpm_divide_a2p:auto_generated           ; 27.66 mW (0.00 mW)                   ; 9.96 mW (0.00 mW)               ; --                                ; 17.70 mW (0.00 mW)                ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated                                                                      ;
+;                     |abs_divider_5dg:divider             ; 27.66 mW (0.45 mW)                   ; 9.96 mW (0.31 mW)               ; --                                ; 17.70 mW (0.14 mW)                ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider                                              ;
+;                         |alt_u_div_7af:divider           ; 27.15 mW (15.46 mW)                  ; 9.63 mW (5.10 mW)               ; --                                ; 17.52 mW (10.35 mW)               ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider                        ;
+;                             |add_sub_qqc:add_sub_12      ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_qqc:add_sub_12 ;
+;                             |add_sub_rqc:add_sub_13      ; 0.03 mW (0.03 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.03 mW (0.03 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_rqc:add_sub_13 ;
+;                             |add_sub_sqc:add_sub_14      ; 0.06 mW (0.06 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.04 mW (0.04 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_sqc:add_sub_14 ;
+;                             |add_sub_sqc:add_sub_15      ; 0.06 mW (0.06 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.04 mW (0.04 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_sqc:add_sub_15 ;
+;                             |add_sub_sqc:add_sub_16      ; 0.07 mW (0.07 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.04 mW (0.04 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_sqc:add_sub_16 ;
+;                             |add_sub_sqc:add_sub_17      ; 0.12 mW (0.12 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.08 mW (0.08 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_sqc:add_sub_17 ;
+;                             |add_sub_sqc:add_sub_18      ; 0.19 mW (0.19 mW)                    ; 0.06 mW (0.06 mW)               ; --                                ; 0.13 mW (0.13 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_sqc:add_sub_18 ;
+;                             |add_sub_sqc:add_sub_19      ; 0.30 mW (0.30 mW)                    ; 0.09 mW (0.09 mW)               ; --                                ; 0.21 mW (0.21 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_sqc:add_sub_19 ;
+;                             |add_sub_sqc:add_sub_20      ; 0.61 mW (0.61 mW)                    ; 0.15 mW (0.15 mW)               ; --                                ; 0.46 mW (0.46 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_sqc:add_sub_20 ;
+;                             |add_sub_sqc:add_sub_21      ; 0.74 mW (0.74 mW)                    ; 0.28 mW (0.28 mW)               ; --                                ; 0.47 mW (0.47 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_sqc:add_sub_21 ;
+;                             |add_sub_sqc:add_sub_22      ; 1.01 mW (1.01 mW)                    ; 0.40 mW (0.40 mW)               ; --                                ; 0.61 mW (0.61 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_sqc:add_sub_22 ;
+;                             |add_sub_sqc:add_sub_23      ; 0.90 mW (0.90 mW)                    ; 0.34 mW (0.34 mW)               ; --                                ; 0.56 mW (0.56 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_sqc:add_sub_23 ;
+;                             |add_sub_sqc:add_sub_24      ; 1.15 mW (1.15 mW)                    ; 0.41 mW (0.41 mW)               ; --                                ; 0.74 mW (0.74 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_sqc:add_sub_24 ;
+;                             |add_sub_sqc:add_sub_25      ; 1.10 mW (1.10 mW)                    ; 0.39 mW (0.39 mW)               ; --                                ; 0.71 mW (0.71 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_sqc:add_sub_25 ;
+;                             |add_sub_sqc:add_sub_26      ; 1.14 mW (1.14 mW)                    ; 0.42 mW (0.42 mW)               ; --                                ; 0.72 mW (0.72 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_sqc:add_sub_26 ;
+;                             |add_sub_sqc:add_sub_27      ; 0.96 mW (0.96 mW)                    ; 0.39 mW (0.39 mW)               ; --                                ; 0.57 mW (0.57 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_sqc:add_sub_27 ;
+;                             |add_sub_sqc:add_sub_28      ; 1.00 mW (1.00 mW)                    ; 0.34 mW (0.34 mW)               ; --                                ; 0.66 mW (0.66 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_sqc:add_sub_28 ;
+;                             |add_sub_sqc:add_sub_29      ; 1.09 mW (1.09 mW)                    ; 0.45 mW (0.45 mW)               ; --                                ; 0.64 mW (0.64 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_sqc:add_sub_29 ;
+;                             |add_sub_sqc:add_sub_30      ; 0.86 mW (0.86 mW)                    ; 0.46 mW (0.46 mW)               ; --                                ; 0.40 mW (0.40 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_sqc:add_sub_30 ;
+;                             |add_sub_sqc:add_sub_31      ; 0.30 mW (0.30 mW)                    ; 0.24 mW (0.24 mW)               ; --                                ; 0.06 mW (0.06 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|alt_u_div_7af:divider|add_sub_sqc:add_sub_31 ;
+;                         |lpm_abs_l0a:my_abs_num          ; 0.06 mW (0.06 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.03 mW (0.03 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_divide:Div0|lpm_divide_a2p:auto_generated|abs_divider_5dg:divider|lpm_abs_l0a:my_abs_num                       ;
+;             |lpm_mult:Mult0                              ; 0.54 mW (0.00 mW)                    ; 0.48 mW (0.00 mW)               ; --                                ; 0.06 mW (0.00 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_mult:Mult0                                                                                                     ;
+;                 |mult_m9t:auto_generated                 ; 0.54 mW (0.54 mW)                    ; 0.48 mW (0.48 mW)               ; --                                ; 0.06 mW (0.06 mW)                 ; |toplevel|filters:filt|reverb_filter:reverb|lpm_mult:Mult0|mult_m9t:auto_generated                                                                             ;
+;     |synchronizer:key_synchronizer                       ; 0.15 mW (0.15 mW)                    ; 0.09 mW (0.09 mW)               ; --                                ; 0.06 mW (0.06 mW)                 ; |toplevel|synchronizer:key_synchronizer                                                                                                                        ;
+;     |recorder:recorder_instance                          ; 2.55 mW (2.55 mW)                    ; 0.93 mW (0.93 mW)               ; --                                ; 1.62 mW (1.62 mW)                 ; |toplevel|recorder:recorder_instance                                                                                                                           ;
+;     |synchronizer:reset_synchronizer                     ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|synchronizer:reset_synchronizer                                                                                                                      ;
+;     |sdram_control:sdram_controller                      ; 1.40 mW (0.46 mW)                    ; 0.87 mW (0.07 mW)               ; --                                ; 0.53 mW (0.39 mW)                 ; |toplevel|sdram_control:sdram_controller                                                                                                                       ;
+;         |countdown:T_counter                             ; 0.06 mW (0.06 mW)                    ; 0.05 mW (0.05 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |toplevel|sdram_control:sdram_controller|countdown:T_counter                                                                                                   ;
+;         |countdown:cas_counter                           ; 0.04 mW (0.04 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |toplevel|sdram_control:sdram_controller|countdown:cas_counter                                                                                                 ;
+;         |sdram_pll:pll_clocks                            ; 0.72 mW (0.00 mW)                    ; 0.64 mW (0.00 mW)               ; --                                ; 0.09 mW (0.00 mW)                 ; |toplevel|sdram_control:sdram_controller|sdram_pll:pll_clocks                                                                                                  ;
+;             |altpll:altpll_component                     ; 0.72 mW (0.00 mW)                    ; 0.64 mW (0.00 mW)               ; --                                ; 0.09 mW (0.00 mW)                 ; |toplevel|sdram_control:sdram_controller|sdram_pll:pll_clocks|altpll:altpll_component                                                                          ;
+;                 |sdram_pll_altpll:auto_generated         ; 0.72 mW (0.72 mW)                    ; 0.64 mW (0.64 mW)               ; --                                ; 0.09 mW (0.09 mW)                 ; |toplevel|sdram_control:sdram_controller|sdram_pll:pll_clocks|altpll:altpll_component|sdram_pll_altpll:auto_generated                                          ;
+;         |countdown:refresh_interval_counter              ; 0.05 mW (0.05 mW)                    ; 0.04 mW (0.04 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|sdram_control:sdram_controller|countdown:refresh_interval_counter                                                                                    ;
+;         |countdown:tmrd_counter                          ; 0.02 mW (0.02 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |toplevel|sdram_control:sdram_controller|countdown:tmrd_counter                                                                                                ;
+;         |countdown:trc_counter                           ; 0.03 mW (0.03 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|sdram_control:sdram_controller|countdown:trc_counter                                                                                                 ;
+;         |countdown:trcd_counter                          ; 0.01 mW (0.01 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|sdram_control:sdram_controller|countdown:trcd_counter                                                                                                ;
+;         |countdown:trp_counter                           ; 0.02 mW (0.02 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |toplevel|sdram_control:sdram_controller|countdown:trp_counter                                                                                                 ;
+;     |synchronizer:switch_synchronizer                    ; 0.70 mW (0.70 mW)                    ; 0.54 mW (0.54 mW)               ; --                                ; 0.16 mW (0.16 mW)                 ; |toplevel|synchronizer:switch_synchronizer                                                                                                                     ;
++----------------------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+(1) Value in parentheses is the power consumed at that level of hierarchy. Value not in parentheses is the power consumed at that level of hierarchy plus the power consumed by all levels of hierarchy below it.
+
+(2) The "Block Thermal Static Power" for all levels of hierarchy except the top-level hierarchy is part of the "Core Static Thermal Power Dissipation" value found on the PowerPlay Power Analyzer-->Summary report panel. The "Core Static Thermal Power Dissipation" also contains the thermal static power dissipated by the routing.
+
+
++--------------------------------------------------------------------+
+; Core Dynamic Thermal Power Dissipation by Clock Domain             ;
++-----------------+-----------------------+--------------------------+
+; Clock Domain    ; Clock Frequency (MHz) ; Total Core Dynamic Power ;
++-----------------+-----------------------+--------------------------+
+; CLOCK_50        ; 50.00                 ; 278.34                   ;
+; No clock domain ; 0.00                  ; 1.98                     ;
++-----------------+-----------------------+--------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Current Drawn from Voltage Supplies Summary                                                                                        ;
++----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; Voltage Supply ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
++----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; VCCINT         ; 258.24 mA               ; 234.65 mA                 ; 23.59 mA                 ; 258.24 mA                        ;
+; VCCIO          ; 17.68 mA                ; 4.46 mA                   ; 13.22 mA                 ; 17.68 mA                         ;
+; VCCA           ; 35.74 mA                ; 0.11 mA                   ; 35.62 mA                 ; 35.74 mA                         ;
+; VCCD           ; 4.83 mA                 ; 0.29 mA                   ; 4.54 mA                  ; 4.83 mA                          ;
++----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+(1) Currents reported in columns "Total Current Drawn", "Dynamic Current Drawn", and "Static Current Drawn" are sufficient for user operation of the device.  
+(2) Currents reported in column "Minimum Power Supply Current" are sufficient for power-up, configuration, and user operation of the device.
+
+
++-----------------------------------------------------------------------------------------------+
+; VCCIO Supply Current Drawn by I/O Bank                                                        ;
++----------+---------------+---------------------+-----------------------+----------------------+
+; I/O Bank ; VCCIO Voltage ; Total Current Drawn ; Dynamic Current Drawn ; Static Current Drawn ;
++----------+---------------+---------------------+-----------------------+----------------------+
+; 1        ; 3.3V          ; 1.99 mA             ; 0.17 mA               ; 1.82 mA              ;
+; 2        ; 3.3V          ; 2.75 mA             ; 0.57 mA               ; 2.17 mA              ;
+; 3        ; 3.3V          ; 1.54 mA             ; 0.03 mA               ; 1.52 mA              ;
+; 4        ; 2.5V          ; 1.50 mA             ; 0.00 mA               ; 1.50 mA              ;
+; 5        ; 2.5V          ; 1.61 mA             ; 0.04 mA               ; 1.57 mA              ;
+; 6        ; 2.5V          ; 1.52 mA             ; 0.00 mA               ; 1.51 mA              ;
+; 7        ; 2.5V          ; 5.25 mA             ; 3.64 mA               ; 1.61 mA              ;
+; 8        ; 3.3V          ; 1.53 mA             ; 0.01 mA               ; 1.52 mA              ;
++----------+---------------+---------------------+-----------------------+----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; VCCIO Supply Current Drawn by Voltage                                                                                             ;
++---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; VCCIO Voltage ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
++---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; 2.5V          ; 9.87 mA                 ; 3.68 mA                   ; 6.19 mA                  ; 9.87 mA                          ;
+; 3.3V          ; 7.81 mA                 ; 0.78 mA                   ; 7.03 mA                  ; 7.81 mA                          ;
++---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+(1) Currents reported in columns "Total Current Drawn", "Dynamic Current Drawn", and "Static Current Drawn" are sufficient for user operation of the device.  
+(2) Currents reported in column "Minimum Power Supply Current" are sufficient for power-up, configuration, and user operation of the device.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Confidence Metric Details                                                                                                                             ;
++----------------------------------------------------------------------------------------+---------------+------------+----------------+----------------+
+; Data Source                                                                            ; Total         ; Pin        ; Registered     ; Combinational  ;
++----------------------------------------------------------------------------------------+---------------+------------+----------------+----------------+
+; Simulation (from file)                                                                 ;               ;            ;                ;                ;
+;     -- Number of signals with Toggle Rate from Simulation                              ; 0 (0.0%)      ; 0 (0.0%)   ; 0 (0.0%)       ; 0 (0.0%)       ;
+;     -- Number of signals with Static Probability from Simulation                       ; 0 (0.0%)      ; 0 (0.0%)   ; 0 (0.0%)       ; 0 (0.0%)       ;
+;                                                                                        ;               ;            ;                ;                ;
+; Node, entity or clock assignment                                                       ;               ;            ;                ;                ;
+;     -- Number of signals with Toggle Rate from Node, entity or clock assignment        ; 1 (0.0%)      ; 1 (0.7%)   ; 0 (0.0%)       ; 0 (0.0%)       ;
+;     -- Number of signals with Static Probability from Node, entity or clock assignment ; 1 (0.0%)      ; 1 (0.7%)   ; 0 (0.0%)       ; 0 (0.0%)       ;
+;                                                                                        ;               ;            ;                ;                ;
+; Vectorless estimation                                                                  ;               ;            ;                ;                ;
+;     -- Number of signals with Toggle Rate from Vectorless estimation                   ; 72477 (99.9%) ; 90 (59.6%) ; 29086 (100.0%) ; 43301 (100.0%) ;
+;     -- Number of signals with Zero toggle rate, from Vectorless estimation             ; 96 (0.1%)     ; 18 (11.9%) ; 0 (0.0%)       ; 78 (0.2%)      ;
+;     -- Number of signals with Static Probability from Vectorless estimation            ; 72477 (99.9%) ; 90 (59.6%) ; 29086 (100.0%) ; 43301 (100.0%) ;
+;                                                                                        ;               ;            ;                ;                ;
+; Default assignment                                                                     ;               ;            ;                ;                ;
+;     -- Number of signals with Toggle Rate from Default assignment                      ; 59 (0.1%)     ; 57 (37.7%) ; 0 (0.0%)       ; 2 (0.0%)       ;
+;     -- Number of signals with Static Probability from Default assignment               ; 62 (0.1%)     ; 60 (39.7%) ; 0 (0.0%)       ; 2 (0.0%)       ;
+;                                                                                        ;               ;            ;                ;                ;
+; Assumed 0                                                                              ;               ;            ;                ;                ;
+;     -- Number of signals with Toggle Rate assumed 0                                    ; 3 (0.0%)      ; 3 (2.0%)   ; 0 (0.0%)       ; 0 (0.0%)       ;
++----------------------------------------------------------------------------------------+---------------+------------+----------------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Activities                                                                                                                           ;
++--------+------+---------------------------------------------+-------------------------+--------------------+--------------------------------+
+; Signal ; Type ; Toggle Rate (millions of transitions / sec) ; Toggle Rate Data Source ; Static Probability ; Static Probability Data Source ;
++--------+------+---------------------------------------------+-------------------------+--------------------+--------------------------------+
+(1) The "Signal Activity" Table has been hidden. To show this table, please select the "Write signal activities to report file" option under "PowerPlay Power Analyzer Settings".
+
+
++-------------------------+
+; Power Analyzer Messages ;
++-------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Power Analyzer
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Tue May 05 20:18:23 2020
+Info: Command: quartus_pow --read_settings_files=off --write_settings_files=off fpgaudacity -c toplevel
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (332104): Reading SDC File: 'constraints.sdc'
+Warning (332060): Node: audio_interface:aud_driver|adc_full was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register filters:filt|IFFT256:Inverse|addri[5] is being clocked by audio_interface:aud_driver|adc_full
+Warning (332060): Node: audio_interface:aud_driver|i2c_counter[9] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register audio_interface:aud_driver|word_count[3] is being clocked by audio_interface:aud_driver|i2c_counter[9]
+Warning (332060): Node: audio_interface:aud_driver|flag1 was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register dac:DAC|DACDATA[10] is being clocked by audio_interface:aud_driver|flag1
+Warning (332056): PLL cross checking found inconsistent PLL clock settings:
+    Warning (332056): Node: sdram_controller|pll_clocks|altpll_component|auto_generated|pll1|clk[0] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
+    Warning (332056): Node: sdram_controller|pll_clocks|altpll_component|auto_generated|pll1|clk[1] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From Clk (Rise) to Clk (Rise) (setup and hold)
+    Critical Warning (332169): From Clk (Fall) to Clk (Rise) (setup and hold)
+Info (223000): Starting Vectorless Power Activity Estimation
+Info (223001): Completed Vectorless Power Activity Estimation
+Info (218000): Using Advanced I/O Power to simulate I/O buffers with the specified board trace model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (215049): Average toggle rate for this design is 11.486 millions of transitions / sec
+Info (215031): Total thermal power estimate for the design is 455.11 mW
+Info: Quartus Prime Power Analyzer was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 5155 megabytes
+    Info: Processing ended: Tue May 05 20:19:11 2020
+    Info: Elapsed time: 00:00:48
+    Info: Total CPU time (on all processors): 00:00:54
+
+

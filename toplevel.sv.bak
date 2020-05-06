@@ -1,0 +1,140 @@
+module toplevel (
+    input logic CLOCK_50,
+    input logic [3:0] KEY,
+    output logic AUD_DACDAT,
+    input logic AUD_DACLRCK,
+    input logic AUD_ADCDAT,
+    input logic AUD_ADCLRCK,
+    output logic AUD_XCK,
+    input logic AUD_BCLK,
+    output logic I2C_SCLK,
+    output logic I2C_SDAT
+);
+    // Some useful shorthands
+    logic [3:0] KEY_AH;
+    logic Clk, Reset;
+    assign Clk = CLOCK_50;
+    assign KEY_AH = ~KEY;
+    assign Reset_AH = KEY_AH[0];
+
+    logic AUD_INIT; // Raise when you want to start WM873 initialization
+    logic AUD_INIT_FINISH; // Raised by WM873 when initialization is complete
+    logic AUD_ADC_FULL; // raised when one full 32 bit sample has been read from mic
+    logic AUD_DATA_OVER; // raised when data fed into LDATA, RDATA for the speaker
+    logic [15:0] LDATA, RDATA; // To Speaker: each 16 bits (L,R)
+    logic [31:0] ADCDATA; // From MIC: 16-bit Left channel MSBs, 16-bit Right channel LSBs
+    
+    // Immediately initialize the WM873 Driver
+    assign AUD_INIT = 1;
+
+    audio_interface aud_driver(
+        .LDATA(LDATA),
+        .RDATA(RDATA),
+        .clk(Clk),
+        .Reset(Reset_AH),
+        .INIT(AUD_INIT),
+        .INIT_FINISH(AUD_INIT_FINISH),
+        .adc_full(AUD_ADC_FULL),
+        .data_over(AUD_DATA_OVER),
+        .AUD_MCLK(AUD_XCK),
+        .AUDIO_BCLK(AUD_BCLK),
+        .AUD_ADCDAT(AUD_ADCDAT),
+        .AUD_DACDAT(AUD_DACDAT),
+        .AUD_DACLRCK(AUD_DACDAT),
+        .AUD_ADCLRCK(AUD_ADCLRCK),
+        .I2C_SDAT(I2C_SDAT),
+        .I2C_SCLK(I2C_SCLK),
+        .ADCDATA(ADCDATA),        
+    );
+
+    enum logic [1:0] { PLAYBACK_WAIT, PLAYBACK_PREPARE, PLAYBACK_COMMIT } playback_state, playback_next_state;
+    logic [31:0] playback_data, playback_next_data;
+
+    always_ff @(posedge Clk) begin
+        playback_state <= playback_next_state;
+        playback_data <= playback_next_data;
+
+        if (Reset_AH) {
+            playback_state <= PLAYBACK_WAIT;
+            playback_data <= 32'b0;
+        }
+    end
+
+    always_comb begin
+        playback_next_state = playback_state;
+        playback_next_data = {16'h0000, 16'hdead};
+        AUD_DATA_OVER = 0;
+        LDATA = 16'b0;
+        RDATA = 16'b0;
+        
+        unique case (playback_state) 
+            PLAYBACK_WAIT:
+                    playback_next_state = AUD_INIT_FINISH ? PLAYBACK_PREPARE : PLAYBACK_WAIT;
+            PLAYBACK_PREPARE:
+                    playback_next_state = AUD_XCK ? PLAYBACK_PREPARE : PLAYBACK_COMMIT;
+            PLAYBACK_COMMIT:
+                    playback_next_state = AUD_XCK ? PLAYBACK_COMMIT : PLAYBACK_PREPARE;
+        endcase
+        
+        case (playback_state)
+            PLAYBACK_COMMIT:
+                begin
+                    LDATA = playback_data[31:16];
+                    RDATA = playback_data[15:0];
+                    AUD_DATA_OVER = 1;
+                end 
+        endcase
+    end
+
+
+    // enum logic [1:0] {STARTUP, INITIALIZING, READY} state, state_next;
+
+    // always_ff @(posedge Clk) begin
+    //     state <= state_next;
+    //     if (Reset_AH) {
+    //         state <= STARTUP;
+    //     }
+    // end
+
+    // always_comb begin
+    //     // Default assignments
+    //     state_next = state;
+    //     AUD_INIT = 0;
+    //     AUD_INIT_FINISH = 0;
+    //     // Define state pathway
+    //     unique case (state)
+    //         case STARTUP
+    //             begin
+    //                 state_next = AUD_INIT ? INITIALIZING : STARTUP;
+    //             end
+    //         case INITIALIZING
+    //             begin
+    //                 state_next = AUD_INIT_FINISH ? READY : INITIALIZING;
+    //             end
+    //         case READY
+    //             begin
+    //                 state_next = READY;
+    //             end
+    //     endcase
+
+    //     // Handle data flow
+    //     case (state)
+    //         case STARTUP
+    //             begin
+    //                 AUD_INIT = 1;
+    //             end
+    //         case READY
+    //             begin
+    //                 if (AUD_ADC_FULL) begin
+    //                     LDATA = ADCDATA[15:8];
+    //                     RDATA = ADCDATA[7:0];
+    //                     AUD_DATA_OVER = 1;
+    //                 end else begin
+    //                 end
+    //             end
+
+    //     endcase
+    // end
+    
+
+endmodule

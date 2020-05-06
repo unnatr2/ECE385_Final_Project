@@ -1,0 +1,86 @@
+module ui_control (
+    input   logic        CLK,
+    input   logic        RESET, // Active High
+    input   logic [17:0] SW,
+    input   logic [3:0]  KEY,
+    output  logic        DRIVER_INIT,
+    output  logic [17:0] LEDR,
+    output  logic [7:0]  LEDG,
+    output  logic [6:0]  DRIVER_VOL,
+    output  logic        DRIVER_VOL_SET,
+);
+    // Here, the current volume [0,80] is added to the floor level before output
+    // See: https://statics.cirrus.com/pubs/proDatasheet/WM8731_v4.9.pdf page 31
+    const logic [6:0] INITIAL_VOL = 40;
+    logic [6:0] current_vol, next_vol;
+    assign DRIVER_VOL = 7'b0101111 + current_vol;
+
+    enum logic [4:0] { MODE_VOL = 18'd1 } current_mode;    
+
+    assign DRIVER_INIT = 1;
+
+
+    // Handle push-button presses
+    logic [3:0] key_curr, key_prev;
+    always_ff @(posedge CLK, posedge RESET) begin
+        if (RESET) begin
+            key_curr = 3'b0;
+            key_prev = 3'b0;
+        end else begin
+            key_prev <= key_curr;
+            key_curr <= KEY;
+        end
+    end
+
+    always_ff @(posedge CLK) begin
+        current_vol <= next_vol; 
+        if (RESET) begin
+            LEDG <= 8'b0;
+            LEDR <= 18'b0;
+            current_vol <= INITIAL_VOL;
+        end
+    end
+    
+    always_comb begin
+        // Default assignments
+        next_vol = current_vol;
+        current_mode = SW;
+        LEDR = current_mode
+        volume_set = 0;
+        
+        case (current_mode)
+            MODE_VOL :
+                begin
+                    // Is a button pressed?
+                    if (key_curr[2] == 1'b1 && key_curr[2] == 1'b0) begin
+                        next_vol = current_vol - 2;
+                        volume_set = 1;
+                    end
+                    if (key_curr[1] == 1'b1 && key_curr[1] == 1'b0) begin
+                        next_vol = current_vol + 2;
+                        volume_set = 1;
+                    end
+
+                    // Clamp the volume to [0,80]
+                    if (next_vol > 80) next_vol = 80;
+                    if (next_vol < 0) next_vol = 0;
+
+                    // Reflect the current volume on the green leds
+                    if (current_vol == 0)       LEDG = 8'b00000000;
+                    else if (current_vol <= 10) LEDG = 8'b10000000;
+                    else if (current_vol <= 20) LEDG = 8'b11000000;
+                    else if (current_vol <= 30) LEDG = 8'b11100000;
+                    else if (current_vol <= 40) LEDG = 8'b11110000;
+                    else if (current_vol <= 50) LEDG = 8'b11111000;
+                    else if (current_vol <= 60) LEDG = 8'b11111100;
+                    else if (current_vol <= 70) LEDG = 8'b11111110;
+                    else                        LEDG = 8'b11111111;
+                end
+            default:
+                // This isnt a valid setting mode, do nothing
+                LEDG = 0;
+                LEDR = 0;
+        endcase
+    end 
+
+endmodule

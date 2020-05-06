@@ -1,0 +1,39 @@
+module testbench ();
+  	timeunit 10ns;
+  	timeprecision 1ns;
+
+    logic        CLK;
+    logic        RESET; 
+    logic [17:0] SW;
+    logic [3:0]  KEY;
+    logic        DRIVER_INIT;
+    logic [17:0] LEDR;
+    logic [7:0]  LEDG;
+    logic [6:0]  DRIVER_VOL;
+    logic        DRIVER_VOL_SET
+
+    always begin: CLOCK_GENERATION
+     	#1 CLK = ~CLK;
+    end
+  
+  	initial begin: CLOCK_INITIALIZATION
+     	CLK = 0;
+    end
+  	
+  	ui_control ui_control_inst(.*);
+  	
+  	initial begin: TESTS
+        KEY = {1'b0, 1'b0, 1'b0, 1'b0};
+        SW = 18'd0;
+        RESET = 1;
+        
+        #5 SW = 18'd1;
+        #5 KEY = {1'b1, 1'b0, 1'b0, 1'b0};
+
+        #5 KEY = {1'b0, 1'b0, 1'b0, 1'b0};
+		#15;
+    end
+
+
+
+endmodule

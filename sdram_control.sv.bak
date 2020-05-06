@@ -1,0 +1,23 @@
+module sdram_control (
+    input   logic        Clk;
+    output  logic        DRAM_CAS_N, // Column Address Select (Active Low)
+    output  logic        DRAM_RAS_N, // Row Address Select (Active Low)
+    output  logic        DRAM_CLK,   // SDRAM Clock
+    output  logic        DRAM_CKE,   // Clock Enable
+    output  logic        DRAM_CS_N,  // Chip Select (2 chips -> 1bit) (Active Low)
+    output  logic        DRAM_WE_N,  // Write Enable (Active Low)
+    output  logic [12:0] DRAM_ADDR,  // Address (for rows AND columns, rows -> 13b, col -> 10b)
+    output  logic [3:0]  DRAM_DQM,   // Byte Data Mask (bytemask for each of 4 bytes)
+    output  logic [1:0]  DRAM_BA,    // Bank Address (nbanks = 4 -> 2bits)
+    inout   logic [31:0] DRAM_DQ     // Data Bus    
+);
+
+    // PLL Module
+    logic SDRAM_CONTROLLER_CLK;
+    sdram_pll pll_clocks(
+        .inclk0(Clk), 
+        .c0(SDRAM_CONTROLLER_CLK),  // Clock to be used for the SDRAM Controller
+        .c1(DRAM_CLK)               // -3ns skewed clock for SDRAM chip
+    );
+
+endmodule

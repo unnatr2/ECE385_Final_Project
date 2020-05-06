@@ -1,0 +1,6 @@
+Warning (10268): Verilog HDL information at ram2x256.v(123): always construct contains both blocking and non-blocking assignments File: C:/Users/unnat/Desktop/ECE385/FPGAudacity/fft/ram2x256.v Line: 123
+Info (10281): Verilog HDL Declaration information at ram2x256.v(78): object "DI" differs only in case from object "di" in the same scope File: C:/Users/unnat/Desktop/ECE385/FPGAudacity/fft/ram2x256.v Line: 78
+Info (10281): Verilog HDL Declaration information at ram2x256.v(62): object "DOI" differs only in case from object "doi" in the same scope File: C:/Users/unnat/Desktop/ECE385/FPGAudacity/fft/ram2x256.v Line: 62
+Warning (10273): Verilog HDL warning at recorder.sv(111): extended using "x" or "z" File: C:/Users/unnat/Desktop/ECE385/FPGAudacity/recorder.sv Line: 111
+Warning (10273): Verilog HDL warning at recorder.sv(112): extended using "x" or "z" File: C:/Users/unnat/Desktop/ECE385/FPGAudacity/recorder.sv Line: 112
+Warning (10268): Verilog HDL information at ui_control.sv(73): always construct contains both blocking and non-blocking assignments File: C:/Users/unnat/Desktop/ECE385/FPGAudacity/ui_control.sv Line: 73

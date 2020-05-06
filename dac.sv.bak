@@ -1,0 +1,36 @@
+module dac (
+    input   logic               AUD_DATA_OVER,
+    input   logic               AUD_INIT_FINISH,
+    input   logic signed [7:0]  VOLUME_OUT,
+    input   logic               DO_PLAYBACK,
+    input   logic signed [22:0] REC_OUTPUT_DATA_L,
+    input   logic signed [22:0] REC_OUTPUT_DATA_R,
+    input   logic signed [22:0] INPUT_LEFT_BUFFER,
+    input   logic signed [22:0] INPUT_RIGHT_BUFFER
+    output  logic        [15:0] LDATA,
+    output  logic        [15:0] RDATA,
+);
+    // Max volume setting for the headphones [0, 80] is 80
+    const logic signed [7:0] VOLUME_MAX = 8'd80;
+
+    // Triggered when AUD_DAC_OVER is raised
+    always_ff @(posedge AUD_DATA_OVER) begin
+        if (AUD_INIT_FINISH) begin
+            // data is ready to be written
+            if (AUD_DATA_OVER) begin
+                if (VOLUME_OUT == 7'b0) begin 
+                    LDATA <= 16'b0;
+                    LDATA <= 16'b0;
+                end else begin
+                    if(DO_PLAYBACK) begin
+                        LDATA <= ((REC_OUTPUT_DATA_L * VOLUME_OUT) / VOLUME_MAX);
+                        RDATA <= ((REC_OUTPUT_DATA_R * VOLUME_OUT) / VOLUME_MAX);
+                    end else begin
+                        LDATA <= ((INPUT_LEFT_BUFFER * VOLUME_OUT) / VOLUME_MAX);
+                        RDATA <= ((INPUT_RIGHT_BUFFER * VOLUME_OUT) / VOLUME_MAX);
+                    end
+                end
+            end 
+        end
+    end
+endmodule

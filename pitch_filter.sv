@@ -1,0 +1,36 @@
+module pitch_filter(
+	input 	logic 		 CLK,
+	input	logic [7:0]  FREQ_BIN,
+	input 	logic [7:0]  PITCH,
+	input 	logic [15:0] REAL_AMPLITUDE_IN,
+	input 	logic [15:0] IMAG_AMPLITUDE_IN,
+	output	logic [15:0] REAL_AMPLITUDE_OUT,
+	output	logic [15:0] IMAG_AMPLITUDE_OUT
+);
+
+	logic [511:0] [15:0] PITCH_BUFFER_REAL, PITCH_BUFFER_IMAG;
+	logic [8:0] INDEX;
+	logic signed [9:0] LEAK;
+
+	always_ff @(posedge CLK) begin
+		PITCH_BUFFER_REAL <= { PITCH_BUFFER_REAL[510:0] , REAL_AMPLITUDE_IN };
+		PITCH_BUFFER_IMAG <= { PITCH_BUFFER_IMAG[510:0] , IMAG_AMPLITUDE_IN };
+		LEAK <= PITCH - 9'd127;
+		INDEX <= 9'd127 + PITCH;
+	end
+
+	always_comb begin
+		REAL_AMPLITUDE_OUT = PITCH_BUFFER_REAL[INDEX];
+		IMAG_AMPLITUDE_OUT = PITCH_BUFFER_IMAG[INDEX];
+
+		if (LEAK > 0 && FREQ_BIN < LEAK) begin
+			REAL_AMPLITUDE_OUT = 16'b0;
+			IMAG_AMPLITUDE_OUT = 16'b0;
+		end
+		
+		if (LEAK < 0 && FREQ_BIN > 9'd256 - LEAK) begin			
+			REAL_AMPLITUDE_OUT = 16'b0;
+			IMAG_AMPLITUDE_OUT = 16'b0;
+		end
+	end
+endmodule
