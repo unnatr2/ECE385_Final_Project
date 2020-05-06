@@ -22,7 +22,7 @@ The project will read audio from the WM8731 Microphone Input and provide output 
   - Holding `KEY2` will play back previously recorded samples from SDRAM
   - Pressing `KEY1` will clear all previous recordings in the first 30s of SDRAM memory.
   
-All other modes use `KEY3` as a universal "decrementer" of the current setting and `KEY2` as an "incrementer". `KEY3` is used as an on/off toggle.
+All other modes use `KEY3` as a universal "decrementer" of the current setting and `KEY2` as an "incrementer". `KEY1` is used as an on/off toggle.
 
 
 ![image](https://i.gyazo.com/162e5b1d1189f6a7ff9d0a8a1de7c3bf.png)
